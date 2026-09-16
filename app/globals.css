@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* ── Kept design tokens — blue and white (§2) ─────────────────────────── */
+:root {
+  --bg: #f5f8ff;
+  --bg-elevated: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-tint: #ebf1ff;
+  --bg-tint-2: #dbe6ff;
+  --ink: #0b1220;
+  --ink-2: #334155;
+  --ink-3: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --blue: #1d4ed8;
+  --blue-2: #2563eb;
+  --blue-3: #3b82f6;
+  --blue-soft: #eff4ff;
+  --green: #059669;
+  --green-soft: #ecfdf5;
+  --amber: #d97706;
+  --amber-soft: #fffbeb;
+  --red: #dc2626;
+  --red-soft: #fef2f2;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(29, 78, 216, 0.06);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elevated: var(--bg-elevated);
+  --color-sidebar: var(--bg-sidebar);
+  --color-tint: var(--bg-tint);
+  --color-tint-2: var(--bg-tint-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-blue: var(--blue);
+  --color-blue-2: var(--blue-2);
+  --color-blue-3: var(--blue-3);
+  --color-blue-soft: var(--blue-soft);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-red: var(--red);
+  --color-red-soft: var(--red-soft);
+  --shadow-card: var(--shadow-card);
+  --font-sans: var(--font-geist-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--bg-tint-2);
+}
+
+/* section label (§2 type) */
+.sec-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+/* card */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* primary / secondary buttons (§2) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--blue);
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border: 1px solid var(--blue);
+  transition: background 150ms ease, transform 150ms ease;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: var(--blue-2);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bg-elevated);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 20px;
+  transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+  white-space: nowrap;
+}
+.btn-secondary:hover {
+  border-color: var(--line-strong);
+  background: var(--bg-tint);
+}
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* hero headline wash — the only permitted gradient (§2) */
+.hero-wash {
+  background: radial-gradient(70% 90% at 50% 0%, rgba(29, 78, 216, 0.04), transparent 75%);
+}
+
+/* thin scrollbars for feed panels */
+.feed-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* skeleton shimmer */
+@keyframes kept-shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton {
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--bg-tint) 25%, var(--bg-tint-2) 37%, var(--bg-tint) 63%);
+  background-size: 800px 100%;
+  animation: kept-shimmer 1.4s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* payout slide-in (§2 motion: 220ms ease) */
+@keyframes payout-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.payout-in {
+  animation: payout-in 220ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .payout-in {
+    animation: none;
+  }
+}
+
+/* ── ticker tape ── */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker-scroll 48s linear infinite;
+  will-change: transform;
+}
+.ticker-viewport:hover .ticker-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+  .ticker-viewport {
+    overflow-x: auto;
+  }
+}
+
+/* ── hero bubbles ── */
+@keyframes bubble-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(-0.5deg);
+  }
+}
+.bubble-float {
+  animation: bubble-drift 5.5s ease-in-out infinite;
+}
+.bubble-float-2 {
+  animation: bubble-drift 6.5s ease-in-out infinite reverse;
+}
+@media (prefers-reduced-motion: reduce) {
+  .bubble-float,
+  .bubble-float-2 {
+    animation: none;
+  }
+}
+
+/* print: receipts */
+@media print {
+  body {
+    background: #ffffff;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
