@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s · PayPig",
   },
   description:
-    "Point a token's creator fees at any OnlyFans creator. PayPig turns those fees into real subscriptions and donations, delivered straight to the creator. 80% to the creator, 20% burns $PAYPIG.",
+    "PayPig is rebuilding how creator fees work. Deploy a token and send its fees to your favorite OnlyFans creator — first as a subscription, then as donations shilling your coin. $PAYPIG is the flywheel: ecosystem volume flows back to holders.",
   openGraph: {
     siteName: "PayPig",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f5f8ff",
+  themeColor: "#FAFCFE",
 };
 
 export default function RootLayout({

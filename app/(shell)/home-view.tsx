@@ -67,14 +67,18 @@ export function HomeView() {
               className="font-serif text-[44px] leading-[1.02] text-ink sm:text-[64px]"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Route token fees
+              We&apos;re rebuilding how
               <br />
-              into subs and donations
+              creator fees work
             </h1>
             <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-2 max-lg:mx-auto sm:text-[16px]">
-              Point a token&apos;s creator fees at any OnlyFans creator. We
-              turn those fees into real subscriptions and donations, delivered
-              straight to the creator.
+              PayPig supports those who need money the most: OnlyFans creators
+              — people who face discrimination, hardship, and judgement.
+              Deploy a token and send its fees to your favorite creator. Fees
+              arrive first as a subscription, then as donations with messages
+              shilling <em className="not-italic font-semibold text-ink">your</em> coin.
+              $PAYPIG is the flywheel — volume in the ecosystem flows back to
+              holders.
             </p>
             <div className="mt-7 flex items-center justify-center gap-3 lg:justify-start">
               <Link href="/launch" className="btn-primary">

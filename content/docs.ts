@@ -6,6 +6,28 @@ export interface DocSection {
 
 export const DOCS: DocSection[] = [
   {
+    slug: "why-paypig",
+    title: "Why PayPig",
+    body: `We're rebuilding how creator fees work.
+
+Every token launched on pump.fun throws off creator fees. Today those fees go to the deployer, and mostly they get dumped. PayPig points them somewhere better.
+
+PayPig supports the people who need money the most: OnlyFans creators. They run real businesses — and get treated like they don't. Banks close their accounts. Processors freeze payouts. Platforms shadow-ban them, landlords and lenders judge them, and every rail they earn on can be pulled away without notice. They face discrimination, hardship, and judgement for doing legal work that millions of people pay for.
+
+Through PayPig, anyone can deploy a token and send its fees to their favorite creator. The fees arrive in the order that matters:
+
+1. First as a subscription. The creator sees a new paying subscriber in their OnlyFans dashboard — recurring, legible income on the platform they already use.
+2. Then as donations. Once subs are covered, the remainder is tipped to the creator with a message shilling YOUR coin. Every donation carries the name of the token that funded it. Support your creator and market your token in the same transaction.
+
+The creator never signs up. No wallet, no crypto, no onboarding, no exposure. From their side it's just subscribers and tips — the two things their business already runs on.
+
+The native $PAYPIG token is the flywheel. 20% of every claim market-buys $PAYPIG and burns it, so every token launched, every trade, and every fee routed through the ecosystem flows back to holders. More launches → more fees → more subs and donations → more burn. Volume anywhere in the ecosystem is value everywhere in it.
+
+Every step — claim, split, sub, donation, burn — posts a public receipt. Nothing is discretionary and nothing is hidden.
+
+Degens get a reason to trade. Creators get paid. Holders get the flywheel. That's PayPig.`,
+  },
+  {
     slug: "overview",
     title: "Overview",
     body: `PayPig is a fee bridge. A token points its creator fees at us. We claim them on-chain. 80% is delivered to the named OnlyFans creator as real subscription purchases and donations. 20% buys $PAYPIG and burns it. The creator does not sign up.
