@@ -23,18 +23,16 @@ export function PigMark({ size = 28 }: { size?: number }) {
 }
 
 export function Wordmark({ compact = false }: { compact?: boolean }) {
+  if (compact) {
+    return <PigMark />;
+  }
   return (
-    <span className="flex items-center gap-2.5">
-      <PigMark />
-      {!compact && (
-        <span
-          className="font-sans text-[22px] font-bold leading-none tracking-tight"
-          style={{ letterSpacing: "-0.02em" }}
-        >
-          <span style={{ color: "var(--ink)" }}>Pay</span>
-          <span style={{ color: "#00AFF0" }}>Pig</span>
-        </span>
-      )}
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/banner.png"
+      alt="PayPig"
+      className="h-8 w-auto shrink-0"
+      draggable={false}
+    />
   );
 }
