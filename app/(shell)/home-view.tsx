@@ -111,7 +111,7 @@ export function HomeView() {
             <div className="flex flex-1 flex-col items-center justify-center gap-3 py-10">
               <p className="text-sm font-semibold text-ink-2">No tokens yet.</p>
               <p className="max-w-xs text-center text-[13px] text-ink-3">
-                The first token launched through Kept appears here with its fee
+                The first token launched through PayPig appears here with its fee
                 trail.
               </p>
               <Link href="/launch" className="btn-primary">
@@ -218,9 +218,9 @@ export function HomeView() {
           <SectionLabel>How the rail works</SectionLabel>
           <ul className="mt-3 space-y-2 text-[13px] leading-snug text-ink-2">
             <li>Sharing config is per mint.</li>
-            <li>100% of creator fees → Kept treasury.</li>
+            <li>100% of creator fees → PayPig treasury.</li>
             <li>80% buys subs and sends donations.</li>
-            <li>20% buys $KEPT and burns it.</li>
+            <li>20% buys $PAYPIG and burns it.</li>
           </ul>
           <Link
             href="/flow"
@@ -248,7 +248,7 @@ export function HomeView() {
             <ol className="space-y-2.5 text-[13.5px] leading-relaxed text-ink-2">
               <li>
                 <b className="font-semibold text-ink">1 · Claim.</b> An example
-                token, $LUNA, points 100% of its creator fees at the Kept
+                token, $LUNA, points 100% of its creator fees at the PayPig
                 treasury. A scheduled claim sweeps{" "}
                 <span className="tabular-nums font-medium text-ink">
                   1.250 SOL ($306.25)
@@ -281,7 +281,7 @@ export function HomeView() {
               </li>
               <li>
                 <b className="font-semibold text-ink">5 · Burn.</b> The protocol
-                share market-buys $KEPT and burns it. Every step posts a public
+                share market-buys $PAYPIG and burns it. Every step posts a public
                 receipt.
               </li>
             </ol>
@@ -376,8 +376,8 @@ export function HomeView() {
         <div className="card p-5">
           <div className="flex items-baseline justify-between">
             <SectionLabel>Buyback &amp; burn</SectionLabel>
-            <Link href="/kept" className="text-[12px] font-semibold text-blue hover:underline">
-              $KEPT
+            <Link href="/paypig" className="text-[12px] font-semibold text-blue hover:underline">
+              $PAYPIG
             </Link>
           </div>
           <div className="mt-2">
@@ -387,7 +387,7 @@ export function HomeView() {
                 className="flex items-center gap-2.5 border-b border-line py-2 text-[13px] last:border-b-0"
               >
                 <span className="font-medium tabular-nums text-ink">
-                  {numCompact(b.keptAmount)} $KEPT
+                  {numCompact(b.paypigAmount)} $PAYPIG
                 </span>
                 <span className="text-[12px] text-ink-3">burned</span>
                 <a
@@ -409,7 +409,7 @@ export function HomeView() {
             {!burns && <SkeletonRows n={5} />}
             {burns && !burns.items.length && (
               <p className="py-4 text-[13px] text-ink-3">
-                20% of every claim buys $KEPT and burns it. Burn transactions
+                20% of every claim buys $PAYPIG and burns it. Burn transactions
                 post here with Solscan links.
               </p>
             )}
@@ -502,9 +502,9 @@ export function HomeView() {
               </p>
             </div>
             <div className="card p-4">
-              <SectionLabel>$KEPT burned</SectionLabel>
+              <SectionLabel>$PAYPIG burned</SectionLabel>
               <p className="mt-1.5 text-[22px] font-semibold tabular-nums text-ink">
-                {numCompact(stats.burnedKept)}
+                {numCompact(stats.burnedPayPig)}
               </p>
             </div>
           </>

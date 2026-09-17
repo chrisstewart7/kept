@@ -1,18 +1,18 @@
 /* In-memory sliding-window rate limiter (per serverless instance). */
 
 const g = globalThis as unknown as {
-  __keptRates?: Map<string, number[]>;
+  __paypigRates?: Map<string, number[]>;
 };
 
 export function rateLimit(key: string, max: number, windowMs: number): boolean {
-  if (!g.__keptRates) g.__keptRates = new Map();
+  if (!g.__paypigRates) g.__paypigRates = new Map();
   const now = Date.now();
-  const hits = (g.__keptRates.get(key) ?? []).filter((t) => now - t < windowMs);
+  const hits = (g.__paypigRates.get(key) ?? []).filter((t) => now - t < windowMs);
   if (hits.length >= max) {
-    g.__keptRates.set(key, hits);
+    g.__paypigRates.set(key, hits);
     return false;
   }
   hits.push(now);
-  g.__keptRates.set(key, hits);
+  g.__paypigRates.set(key, hits);
   return true;
 }

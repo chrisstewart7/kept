@@ -27,7 +27,7 @@ export function AnalyticsView() {
         ["Creator share", usdWhole(Math.round(rangeFees * 0.8))],
         ["Subs purchased", `${new Intl.NumberFormat("en-US").format(rangeSubs)} · ${usdWhole(rangeSubsUsd)}`],
         ["Donations paid", usdWhole(rangeCash)],
-        ["$KEPT burned", usdWhole(rangeBurn)],
+        ["$PAYPIG burned", usdWhole(rangeBurn)],
         ["Queued now", usdWhole(stats.queuedUsdCents)],
       ]
     : [];
@@ -94,7 +94,7 @@ export function AnalyticsView() {
             </p>
             <p className="max-w-md text-[13px] text-ink-3">
               Fees claimed, the 80/20 split, subscriptions purchased,
-              donations paid, and $KEPT burns all chart here from the first
+              donations paid, and $PAYPIG burns all chart here from the first
               claim onward.
             </p>
           </div>
@@ -135,7 +135,7 @@ export function AnalyticsView() {
           </div>
         </div>
         <div className="card p-5 lg:col-span-2">
-          <SectionLabel>Donations paid vs $KEPT burned</SectionLabel>
+          <SectionLabel>Donations paid vs $PAYPIG burned</SectionLabel>
           <div className="mt-3">
             {points.length ? (
               <CashArea points={points} />

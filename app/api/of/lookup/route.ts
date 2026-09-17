@@ -145,7 +145,7 @@ export async function POST(req: NextRequest) {
   if (cached?.optOut) {
     return NextResponse.json({
       ...publicShape(cached),
-      error: "This creator opted out of Kept. New launches for them are disabled.",
+      error: "This creator opted out of PayPig. New launches for them are disabled.",
     });
   }
   if (cached && Date.now() - cached.fetchedAt < CACHE_MS) {

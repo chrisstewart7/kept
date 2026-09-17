@@ -22,7 +22,7 @@ export function TokenView({ mint }: { mint: string }) {
       <div className="card mx-auto max-w-lg">
         <EmptyState
           title="Token not found."
-          hint="It may not be registered with Kept yet. Register it on the Launch page."
+          hint="It may not be registered with PayPig yet. Register it on the Launch page."
         />
         <div className="flex justify-center pb-8">
           <Link href="/launch" className="btn-primary">

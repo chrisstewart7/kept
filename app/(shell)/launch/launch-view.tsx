@@ -246,7 +246,7 @@ export function LaunchView() {
         </h1>
         <p className="mt-1 max-w-xl text-[14px] text-ink-2">
           Create a pump.fun coin whose description and 100% fee share point at
-          Kept. Your wallet signs everything — the server never holds a key.
+          PayPig. Your wallet signs everything — the server never holds a key.
         </p>
       </header>
 
@@ -349,7 +349,7 @@ export function LaunchView() {
               )}
               {lookup.s === "optout" && (
                 <p className="rounded-xl border border-red/25 bg-red-soft px-3.5 py-2.5 text-[13px] text-red">
-                  This creator opted out of Kept. Launches for them are
+                  This creator opted out of PayPig. Launches for them are
                   disabled.
                 </p>
               )}
@@ -443,7 +443,7 @@ export function LaunchView() {
                   type="checkbox"
                   checked={accepted}
                   onChange={(e) => setAccepted(e.target.checked)}
-                  className="mt-0.5 h-4 w-4 accent-[#1d4ed8]"
+                  className="mt-0.5 h-4 w-4 accent-[#00AFF0]"
                 />
                 <span>
                   I accept the{" "}
@@ -461,7 +461,7 @@ export function LaunchView() {
                   {orphanMint && (
                     <div className="mt-2 rounded-lg border border-line bg-elevated p-3 text-ink-2">
                       <p className="font-semibold text-ink">
-                        Coin may exist but fees are not pointed at Kept yet.
+                        Coin may exist but fees are not pointed at PayPig yet.
                       </p>
                       <p className="mt-0.5 font-mono text-[11px]">{orphanMint}</p>
                       <button type="button" className="btn-primary mt-2" onClick={runFix}>
@@ -558,7 +558,7 @@ export function LaunchView() {
               <li>
                 Description must include:{" "}
                 <code className="font-mono text-[12px]">
-                  Fees to onlyfans.com/USER via Kept
+                  Fees to onlyfans.com/USER via PayPig
                 </code>
               </li>
               <li>Paste the mint in Register and hit Detect</li>

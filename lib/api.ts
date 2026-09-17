@@ -6,7 +6,7 @@ import {
   Burn,
   Creator,
   FlowStep,
-  KeptInfo,
+  PayPigInfo,
   OfframpEvent,
   Payout,
   Stats,
@@ -20,7 +20,7 @@ export type PayoutRowData = Payout & {
 
 export type TokenRowData = Token & { creator: Creator | null };
 
-const base = process.env.KEPT_API_BASE ?? "";
+const base = process.env.PAYPIG_API_BASE ?? "";
 
 async function get<T>(path: string): Promise<T> {
   const res = await fetch(`${base}${path}`);
@@ -90,10 +90,10 @@ export function useAnalytics(range: "1d" | "30d" | "all") {
   });
 }
 
-export function useKept() {
-  return useQuery<{ info: KeptInfo; burns: Burn[] }>({
-    queryKey: ["kept"],
-    queryFn: () => get("/api/kept"),
+export function usePayPig() {
+  return useQuery<{ info: PayPigInfo; burns: Burn[] }>({
+    queryKey: ["paypig"],
+    queryFn: () => get("/api/paypig"),
     refetchInterval: 15000,
   });
 }

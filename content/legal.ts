@@ -12,15 +12,15 @@ export const TERMS: LegalDoc = {
   sections: [
     {
       heading: "Acceptance",
-      body: "The deployer of a token accepts these terms by directing the token's creator fees to the Kept treasury. No signature or account is required. If you do not accept these terms, do not direct fees.",
+      body: "The deployer of a token accepts these terms by directing the token's creator fees to the PayPig treasury. No signature or account is required. If you do not accept these terms, do not direct fees.",
     },
     {
       heading: "Recipients",
-      body: "The named recipient is not a party to these terms. A payment from Kept is not an endorsement by the recipient and creates no contract between the recipient and Kept, the deployer, or any token holder.",
+      body: "The named recipient is not a party to these terms. A payment from PayPig is not an endorsement by the recipient and creates no contract between the recipient and PayPig, the deployer, or any token holder.",
     },
     {
       heading: "The split",
-      body: "80% of each claimed fee is allocated to the named recipient. 20% purchases $KEPT on the open market and burns it. The split is fixed and applies per claim without discretion.",
+      body: "80% of each claimed fee is allocated to the named recipient. 20% purchases $PAYPIG on the open market and burns it. The split is fixed and applies per claim without discretion.",
     },
     {
       heading: "Prohibited use",
@@ -28,15 +28,15 @@ export const TERMS: LegalDoc = {
     },
     {
       heading: "No affiliation",
-      body: "Kept is not affiliated with OnlyFans, Fenix International Limited, X Corp., or Pump.fun. OnlyFans is a trademark of its owner and is used only to describe a destination platform.",
+      body: "PayPig is not affiliated with OnlyFans, Fenix International Limited, X Corp., or Pump.fun. OnlyFans is a trademark of its owner and is used only to describe a destination platform.",
     },
     {
       heading: "Service, liability",
-      body: "The service is provided as-is, without warranty of any kind. To the maximum extent permitted by law, Kept's aggregate liability is capped at the protocol cut retained in the twelve months preceding the claim.",
+      body: "The service is provided as-is, without warranty of any kind. To the maximum extent permitted by law, PayPig's aggregate liability is capped at the protocol cut retained in the twelve months preceding the claim.",
     },
     {
       heading: "Opt-out",
-      body: "A named creator may refuse further payments by contacting admin@usekept.app or @UseKept. Requests are honored within 7 days. Held balances are paid out on request.",
+      body: "A named creator may refuse further payments by contacting admin@paypig.app or @PayPigApp. Requests are honored within 7 days. Held balances are paid out on request.",
     },
   ],
 };
@@ -48,11 +48,11 @@ export const PRIVACY: LegalDoc = {
   sections: [
     {
       heading: "What we process",
-      body: "Public on-chain data (mints, signatures, balances) and public OnlyFans usernames as they appear in token descriptions. This data is already public; Kept indexes it.",
+      body: "Public on-chain data (mints, signatures, balances) and public OnlyFans usernames as they appear in token descriptions. This data is already public; PayPig indexes it.",
     },
     {
       heading: "What we collect",
-      body: "Wallet addresses are collected only when a deployer connects a wallet to launch. Email is collected only if you write to admin@usekept.app.",
+      body: "Wallet addresses are collected only when a deployer connects a wallet to launch. Email is collected only if you write to admin@paypig.app.",
     },
     {
       heading: "What we do not do",
@@ -60,7 +60,7 @@ export const PRIVACY: LegalDoc = {
     },
     {
       heading: "Public profile cache",
-      body: "Public OnlyFans avatars and display names are cached solely to identify a payment recipient on the Board. Paywalled content is never requested, collected, or stored. Recipients may opt out at any time via admin@usekept.app; opt-outs hide the avatar immediately and freeze new registrations for the username.",
+      body: "Public OnlyFans avatars and display names are cached solely to identify a payment recipient on the Board. Paywalled content is never requested, collected, or stored. Recipients may opt out at any time via admin@paypig.app; opt-outs hide the avatar immediately and freeze new registrations for the username.",
     },
     {
       heading: "Retention",
@@ -75,8 +75,8 @@ export const DISCLOSURES: LegalDoc = {
   updated: "September 16, 2026",
   sections: [
     {
-      heading: "$KEPT",
-      body: "$KEPT is not equity, a security offering, or a claim on revenue. It has no governance rights. Its only mechanism is the published buyback and burn.",
+      heading: "$PAYPIG",
+      body: "$PAYPIG is not equity, a security offering, or a claim on revenue. It has no governance rights. Its only mechanism is the published buyback and burn.",
     },
     {
       heading: "Execution risk",

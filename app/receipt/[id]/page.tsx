@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { creatorById, getReceipt, getToken } from "@/lib/data";
 import { fullDate, usd } from "@/lib/format";
-import { KeptMark } from "@/components/logo";
+import { PigMark } from "@/components/logo";
 import { ReceiptActions } from "./receipt-actions";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!p) return { title: "Receipt" };
   return {
     title: `Receipt — ${usd(p.usdCents)} ${p.rail.toUpperCase()}`,
-    description: "Public Kept payment receipt.",
+    description: "Public PayPig payment receipt.",
   };
 }
 
@@ -91,13 +91,13 @@ export default async function ReceiptPage({
       {/* slim header (§6.10) */}
       <header className="border-b border-line bg-elevated">
         <div className="mx-auto flex max-w-xl items-center gap-2.5 px-5 py-4">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="Kept home">
-            <KeptMark size={22} />
+          <Link href="/" className="flex items-center gap-2.5" aria-label="PayPig home">
+            <PigMark size={22} />
             <span
               className="font-serif text-[18px] text-ink"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Kept receipt
+              PayPig receipt
             </span>
           </Link>
         </div>
@@ -126,7 +126,7 @@ export default async function ReceiptPage({
         </div>
         <ReceiptActions />
         <p className="mt-6 text-center text-[11.5px] text-ink-3">
-          Payment by the Kept protocol. Not an endorsement by the creator. Not
+          Payment by the PayPig protocol. Not an endorsement by the creator. Not
           affiliated with OnlyFans or X.
         </p>
       </main>

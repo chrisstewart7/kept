@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { KeptMark } from "@/components/logo";
+import { PigMark } from "@/components/logo";
 
 export default function NotFound() {
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center gap-4 bg-bg px-6 text-center">
-      <KeptMark size={40} />
+      <PigMark size={40} />
       <h1
         className="font-serif text-[40px] text-ink"
         style={{ letterSpacing: "-0.02em" }}

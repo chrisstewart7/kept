@@ -47,27 +47,27 @@ const EMPTY: RegistryData = {
 
 const FILE =
   process.env.VERCEL === "1"
-    ? "/tmp/kept-registry.json"
-    : path.join(process.cwd(), ".kept-data", "registry.json");
+    ? "/tmp/paypig-registry.json"
+    : path.join(process.cwd(), ".paypig-data", "registry.json");
 
-const g = globalThis as unknown as { __keptRegistry?: RegistryData };
+const g = globalThis as unknown as { __paypigRegistry?: RegistryData };
 
 async function load(): Promise<RegistryData> {
-  if (g.__keptRegistry) return g.__keptRegistry;
+  if (g.__paypigRegistry) return g.__paypigRegistry;
   try {
     const raw = await fs.readFile(FILE, "utf8");
-    g.__keptRegistry = { ...EMPTY, ...JSON.parse(raw) };
+    g.__paypigRegistry = { ...EMPTY, ...JSON.parse(raw) };
   } catch {
-    g.__keptRegistry = structuredClone(EMPTY);
+    g.__paypigRegistry = structuredClone(EMPTY);
   }
-  return g.__keptRegistry!;
+  return g.__paypigRegistry!;
 }
 
 async function persist(): Promise<void> {
-  if (!g.__keptRegistry) return;
+  if (!g.__paypigRegistry) return;
   try {
     await fs.mkdir(path.dirname(FILE), { recursive: true });
-    await fs.writeFile(FILE, JSON.stringify(g.__keptRegistry), "utf8");
+    await fs.writeFile(FILE, JSON.stringify(g.__paypigRegistry), "utf8");
   } catch {
     /* /tmp may be read-only mid-shutdown; memory copy still serves */
   }

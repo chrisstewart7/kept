@@ -7,7 +7,7 @@ import { create } from "zustand";
 import { Menu, Plus, X } from "lucide-react";
 import { X_HANDLE } from "@/lib/constants";
 import { TickerTape } from "./live-chrome";
-import { KeptMark, Wordmark } from "./logo";
+import { PigMark, Wordmark } from "./logo";
 import { SearchOverlay, SearchTrigger } from "./search";
 import { WalletButton, WalletPicker } from "./wallet";
 
@@ -15,7 +15,7 @@ import { WalletButton, WalletPicker } from "./wallet";
 const NAV = [
   { href: "/", label: "Board" },
   { href: "/flow", label: "Flow" },
-  { href: "/kept", label: "$KEPT" },
+  { href: "/paypig", label: "$PAYPIG" },
   { href: "/docs", label: "Docs" },
 ];
 
@@ -41,7 +41,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* ── top bar ── */}
       <header className="sticky top-0 z-[60] border-b border-line bg-bg/90 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-[1240px] items-center gap-5 px-4 py-3 sm:px-6">
-          <Link href="/" aria-label="Kept home" className="shrink-0">
+          <Link href="/" aria-label="PayPig home" className="shrink-0">
             <Wordmark />
           </Link>
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
@@ -144,7 +144,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <footer className="border-t border-line px-4 py-6 sm:px-6">
         <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center gap-x-6 gap-y-2 text-[12px] text-ink-3">
           <span className="flex items-center gap-2">
-            <KeptMark size={16} /> © 2026 Kept
+            <PigMark size={16} /> © 2026 PayPig
           </span>
           {MENU_EXTRA.map(({ href, label }) => (
             <Link key={href} href={href} className="hover:text-ink">

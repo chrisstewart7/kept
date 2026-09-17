@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
-/* ── Kept design tokens — blue and white (§2) ─────────────────────────── */
+/* ── PayPig design tokens — blue and white (§2) ─────────────────────────── */
 :root {
-  --bg: #f5f8ff;
+  --bg: #FAFCFE;
   --bg-elevated: #ffffff;
   --bg-sidebar: #ffffff;
-  --bg-tint: #ebf1ff;
-  --bg-tint-2: #dbe6ff;
-  --ink: #0b1220;
+  --bg-tint: #EAF7FD;
+  --bg-tint-2: #D3EFFB;
+  --ink: #17202A;
   --ink-2: #334155;
   --ink-3: #64748b;
-  --line: #e2e8f0;
-  --line-strong: #cbd5e1;
-  --blue: #1d4ed8;
-  --blue-2: #2563eb;
-  --blue-3: #3b82f6;
-  --blue-soft: #eff4ff;
+  --line: #E5EBF1;
+  --line-strong: #CBD8E1;
+  --blue: #00AFF0;
+  --blue-2: #009EE0;
+  --blue-3: #33C1F5;
+  --blue-soft: #E6F7FE;
   --green: #059669;
   --green-soft: #ecfdf5;
   --amber: #d97706;
   --amber-soft: #fffbeb;
   --red: #dc2626;
   --red-soft: #fef2f2;
-  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(29, 78, 216, 0.06);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(0, 175, 240, 0.08);
 }
 
 @theme inline {
@@ -138,7 +138,7 @@ body {
 
 /* hero headline wash — the only permitted gradient (§2) */
 .hero-wash {
-  background: radial-gradient(70% 90% at 50% 0%, rgba(29, 78, 216, 0.04), transparent 75%);
+  background: radial-gradient(70% 90% at 50% 0%, rgba(0, 175, 240, 0.05), transparent 75%);
 }
 
 /* thin scrollbars for feed panels */
@@ -148,7 +148,7 @@ body {
 }
 
 /* skeleton shimmer */
-@keyframes kept-shimmer {
+@keyframes pig-shimmer {
   0% {
     background-position: -400px 0;
   }
@@ -160,7 +160,7 @@ body {
   border-radius: 8px;
   background: linear-gradient(90deg, var(--bg-tint) 25%, var(--bg-tint-2) 37%, var(--bg-tint) 63%);
   background-size: 800px 100%;
-  animation: kept-shimmer 1.4s linear infinite;
+  animation: pig-shimmer 1.4s linear infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .skeleton {

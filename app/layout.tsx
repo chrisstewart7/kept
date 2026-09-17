@@ -23,19 +23,19 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Kept — Route token fees into subs and donations",
-    template: "%s · Kept",
+    default: "PayPig — Route token fees into subs and donations",
+    template: "%s · PayPig",
   },
   description:
-    "Point a token's creator fees at any OnlyFans creator. Kept turns those fees into real subscriptions and donations, delivered straight to the creator. 80% to the creator, 20% burns $KEPT.",
+    "Point a token's creator fees at any OnlyFans creator. PayPig turns those fees into real subscriptions and donations, delivered straight to the creator. 80% to the creator, 20% burns $PAYPIG.",
   openGraph: {
-    siteName: "Kept",
+    siteName: "PayPig",
     type: "website",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    site: "@UseKept",
+    site: "@PayPigApp",
   },
 };
 

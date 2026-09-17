@@ -49,7 +49,7 @@ export function ExploreView() {
           Explore
         </h1>
         <p className="mt-1 text-[14px] text-ink-2">
-          Every token routing fees through Kept, and every creator receiving
+          Every token routing fees through PayPig, and every creator receiving
           them.
         </p>
       </header>
@@ -141,7 +141,7 @@ export function ExploreView() {
                 <p className="max-w-sm text-[13px] text-ink-3">
                   {q
                     ? "Try a different name, ticker, mint, or OF username."
-                    : "Every token launched or registered through Kept lists here with its fee trail, live."}
+                    : "Every token launched or registered through PayPig lists here with its fee trail, live."}
                 </p>
                 {!q && (
                   <Link href="/launch" className="btn-primary">

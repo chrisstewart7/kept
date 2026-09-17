@@ -9,7 +9,7 @@ export async function generateMetadata({
   const { handle } = await params;
   return {
     title: `@${handle}`,
-    description: `Subscriptions and donations sent to onlyfans.com/${handle} through Kept.`,
+    description: `Subscriptions and donations sent to onlyfans.com/${handle} through PayPig.`,
   };
 }
 

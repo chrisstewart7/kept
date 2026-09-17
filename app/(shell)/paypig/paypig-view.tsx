@@ -1,7 +1,7 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import { useAnalytics, useKept } from "@/lib/api";
+import { useAnalytics, usePayPig } from "@/lib/api";
 import { numCompact, relTime, usd, usdCompact } from "@/lib/format";
 import { AddressChip } from "@/components/cards";
 import { CashArea } from "@/components/charts";
@@ -12,8 +12,8 @@ import {
   SkeletonRows,
 } from "@/components/ui";
 
-export function KeptView() {
-  const { data } = useKept();
+export function PayPigView() {
+  const { data } = usePayPig();
   const { data: analytics } = useAnalytics("30d");
   const info = data?.info;
 
@@ -22,10 +22,10 @@ export function KeptView() {
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-serif text-[34px] text-ink" style={{ letterSpacing: "-0.02em" }}>
-            $KEPT
+            $PAYPIG
           </h1>
           <p className="mt-1 text-[14px] text-ink-2">
-            The value-accrual token of Kept.
+            The value-accrual token of PayPig.
           </p>
         </div>
         {info &&
@@ -43,7 +43,7 @@ export function KeptView() {
             </div>
           ) : (
             <span className="rounded-full border border-amber/25 bg-amber-soft px-4 py-1.5 text-[12.5px] font-semibold text-amber">
-              $KEPT is not launched yet — no CA, no market
+              $PAYPIG is not launched yet — no CA, no market
             </span>
           ))}
       </header>
@@ -112,18 +112,18 @@ export function KeptView() {
 
         {/* what it is / is not (§6.7) */}
         <div className="card p-5">
-          <SectionLabel>What $KEPT is</SectionLabel>
+          <SectionLabel>What $PAYPIG is</SectionLabel>
           <div className="mt-3 space-y-2.5 text-[13.5px] leading-relaxed text-ink-2">
-            <p>$KEPT is the value-accrual token of Kept.</p>
+            <p>$PAYPIG is the value-accrual token of PayPig.</p>
             <p>
               It has no governance. Holding it does not change the 80/20
               split.
             </p>
             <p>
-              20% of every claimed fee buys $KEPT on the market and burns it.
+              20% of every claimed fee buys $PAYPIG on the market and burns it.
             </p>
             <p className="border-t border-line pt-2.5 text-[12.5px] text-ink-3">
-              $KEPT&apos;s own creator fees stay in the protocol treasury. No
+              $PAYPIG&apos;s own creator fees stay in the protocol treasury. No
               fee discount, no access rights, not equity.
             </p>
           </div>
@@ -138,7 +138,7 @@ export function KeptView() {
           {data && !data.burns.length && (
             <EmptyState
               title="No buybacks yet."
-              hint="20% of the first claimed fee buys $KEPT on the market and burns it. The transaction posts here."
+              hint="20% of the first claimed fee buys $PAYPIG on the market and burns it. The transaction posts here."
             />
           )}
           {data?.burns.map((b) => (
@@ -147,7 +147,7 @@ export function KeptView() {
               className="flex items-center gap-3 border-b border-line py-2.5 text-[13px] last:border-b-0"
             >
               <span className="font-medium tabular-nums text-ink">
-                {numCompact(b.keptAmount)} $KEPT
+                {numCompact(b.paypigAmount)} $PAYPIG
               </span>
               <span className="text-[12px] text-ink-3">bought and burned</span>
               <a

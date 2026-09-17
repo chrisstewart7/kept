@@ -59,7 +59,7 @@ export interface Claim {
 
 export interface Burn {
   id: string;
-  keptAmount: number;
+  paypigAmount: number;
   usdCents: number;
   sig: string;
   createdAt: string;
@@ -81,7 +81,7 @@ export interface Stats {
   subsPurchased: number;
   cashSentUsdCents: number;
   queuedUsdCents: number;
-  burnedKept: number;
+  burnedPayPig: number;
   /** production readiness flags — surfaced so the UI can gate honestly */
   ready?: { treasury: boolean; rpc: boolean };
 }
@@ -104,10 +104,10 @@ export interface AnalyticsPoint {
   subsUsdCents: number;
   cashUsdCents: number;
   burnedUsdCents: number;
-  burnedKept: number;
+  burnedPayPig: number;
 }
 
-export interface KeptInfo {
+export interface PayPigInfo {
   mint: string;
   live: boolean;
   launched?: boolean;

@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/analytics",
     "/launch",
     "/flow",
-    "/kept",
+    "/paypig",
     "/docs",
     "/legal/terms",
     "/legal/privacy",

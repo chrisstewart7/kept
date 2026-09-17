@@ -1,4 +1,4 @@
-# Kept
+# PayPig
 
 Route token fees into real OnlyFans subscriptions and donations.
 
@@ -35,7 +35,7 @@ honest all-zero state (empty states + "Example"-labeled worked claim).
   (Phantom / Solflare / Backpack) directly. Swap for
   `@solana/wallet-adapter-react` when the real Pump create integration lands
   (`@solana/web3.js` is already installed).
-- Placeholders: `$KEPT` mint and treasury in `lib/constants.ts` / `.env`.
+- Placeholders: `$PAYPIG` mint and treasury in `lib/constants.ts` / `.env`.
 
 ## Notes
 

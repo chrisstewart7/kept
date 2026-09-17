@@ -32,7 +32,7 @@ export function PaymentsView() {
         </h1>
         <p className="mt-1 text-[14px] text-ink-2">
           Every payout — subscription purchases and donations — posted
-          publicly by @UseKept and recorded here.
+          publicly by @PayPigApp and recorded here.
         </p>
       </header>
 
@@ -95,7 +95,7 @@ export function PaymentsView() {
         <p className="rounded-xl border border-amber/25 bg-amber-soft px-4 py-3 text-[13px] text-ink-2">
           Held balances are waiting on the delivery worker — card declines or
           an unavailable creator page. They stay claimable for 7 days, then
-          route to the $KEPT buyback.
+          route to the $PAYPIG buyback.
         </p>
       )}
 

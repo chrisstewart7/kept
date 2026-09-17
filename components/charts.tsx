@@ -40,7 +40,7 @@ interface TooltipPayloadEntry {
   color?: string;
 }
 
-function KeptTooltip({
+function PayPigTooltip({
   active,
   payload,
   label,
@@ -75,19 +75,19 @@ export function FeesArea({ points }: { points: AnalyticsPoint[] }) {
       <AreaChart data={points} margin={{ top: 8, right: 4, left: 4, bottom: 0 }}>
         <defs>
           <linearGradient id="feesFill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#1d4ed8" stopOpacity={0.18} />
-            <stop offset="100%" stopColor="#1d4ed8" stopOpacity={0.02} />
+            <stop offset="0%" stopColor="#00AFF0" stopOpacity={0.18} />
+            <stop offset="100%" stopColor="#00AFF0" stopOpacity={0.02} />
           </linearGradient>
         </defs>
         <CartesianGrid stroke="#e2e8f0" strokeDasharray="0" vertical={false} />
         <XAxis dataKey="date" {...axis} tickFormatter={shortDate} minTickGap={40} />
         <YAxis {...axis} tickFormatter={(v: number) => `$${Math.round(v / 100000) / 10}k`} width={44} />
-        <Tooltip content={<KeptTooltip />} />
+        <Tooltip content={<PayPigTooltip />} />
         <Area
           name="Fees"
           type="monotone"
           dataKey="feesUsdCents"
-          stroke="#1d4ed8"
+          stroke="#00AFF0"
           strokeWidth={1.8}
           fill="url(#feesFill)"
         />
@@ -103,13 +103,13 @@ export function SplitBars({ points }: { points: AnalyticsPoint[] }) {
         <CartesianGrid stroke="#e2e8f0" vertical={false} />
         <XAxis dataKey="date" {...axis} tickFormatter={shortDate} minTickGap={40} />
         <YAxis {...axis} tickFormatter={(v: number) => `$${Math.round(v / 100000) / 10}k`} width={44} />
-        <Tooltip content={<KeptTooltip />} />
-        <Bar name="Creator 80%" dataKey="creatorShareCents" stackId="s" fill="#1d4ed8" />
+        <Tooltip content={<PayPigTooltip />} />
+        <Bar name="Creator 80%" dataKey="creatorShareCents" stackId="s" fill="#00AFF0" />
         <Bar
           name="Protocol 20%"
           dataKey="protocolShareCents"
           stackId="s"
-          fill="#0b1220"
+          fill="#17202A"
           radius={[3, 3, 0, 0]}
         />
       </BarChart>
@@ -124,7 +124,7 @@ export function SubsBar({ points }: { points: AnalyticsPoint[] }) {
         <CartesianGrid stroke="#e2e8f0" vertical={false} />
         <XAxis dataKey="date" {...axis} tickFormatter={shortDate} minTickGap={40} />
         <YAxis {...axis} width={34} />
-        <Tooltip content={<KeptTooltip isMoney={false} />} />
+        <Tooltip content={<PayPigTooltip isMoney={false} />} />
         <Bar
           name="Subscriptions"
           dataKey="subsCount"
@@ -143,12 +143,12 @@ export function CashArea({ points }: { points: AnalyticsPoint[] }) {
         <CartesianGrid stroke="#e2e8f0" vertical={false} />
         <XAxis dataKey="date" {...axis} tickFormatter={shortDate} minTickGap={40} />
         <YAxis {...axis} tickFormatter={(v: number) => `$${Math.round(v / 100000) / 10}k`} width={44} />
-        <Tooltip content={<KeptTooltip />} />
+        <Tooltip content={<PayPigTooltip />} />
         <Area
           name="Donations paid"
           type="monotone"
           dataKey="cashUsdCents"
-          stroke="#2563eb"
+          stroke="#009EE0"
           strokeWidth={1.8}
           fill="none"
         />
@@ -156,7 +156,7 @@ export function CashArea({ points }: { points: AnalyticsPoint[] }) {
           name="Burned"
           type="monotone"
           dataKey="burnedUsdCents"
-          stroke="#0b1220"
+          stroke="#17202A"
           strokeWidth={1.8}
           fill="none"
         />

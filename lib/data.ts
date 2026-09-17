@@ -13,15 +13,15 @@ import {
   Claim,
   Creator,
   FlowStep,
-  KeptInfo,
+  PayPigInfo,
   OfframpEvent,
   Payout,
   Stats,
   Token,
 } from "./types";
 import {
-  KEPT_MINT,
-  keptMintConfigured,
+  PAYPIG_MINT,
+  paypigMintConfigured,
   treasuryConfigured,
 } from "./constants";
 import { chainConfig, VerifyResult } from "./verify";
@@ -61,7 +61,7 @@ export async function getStats(): Promise<
     queuedUsdCents: payouts
       .filter((p) => p.rail === "held")
       .reduce((s, p) => s + p.usdCents, 0),
-    burnedKept: burns.reduce((s, b) => s + b.keptAmount, 0),
+    burnedPayPig: burns.reduce((s, b) => s + b.paypigAmount, 0),
     ready: {
       treasury: treasuryConfigured(),
       rpc: !!chainConfig().rpc,
@@ -198,20 +198,20 @@ export async function getAnalytics(
       subsUsdCents: 0,
       cashUsdCents: 0,
       burnedUsdCents: 0,
-      burnedKept: 0,
+      burnedPayPig: 0,
     });
   }
   return out;
 }
 
-/* ── $KEPT ──────────────────────────────────────────────────────────── */
+/* ── $PAYPIG ──────────────────────────────────────────────────────────── */
 
-export async function getKeptInfo(): Promise<KeptInfo & { launched: boolean }> {
-  const launched = keptMintConfigured();
-  const burned = (await listBurns()).reduce((s, b) => s + b.keptAmount, 0);
+export async function getPayPigInfo(): Promise<PayPigInfo & { launched: boolean }> {
+  const launched = paypigMintConfigured();
+  const burned = (await listBurns()).reduce((s, b) => s + b.paypigAmount, 0);
   const supply = 1_000_000_000;
   return {
-    mint: KEPT_MINT,
+    mint: PAYPIG_MINT,
     launched,
     live: false, // price/MC need a market feed — never guessed
     priceUsd: 0,
@@ -219,7 +219,7 @@ export async function getKeptInfo(): Promise<KeptInfo & { launched: boolean }> {
     supply,
     burned,
     burnedPct: +((burned / supply) * 100).toFixed(2),
-    pumpUrl: `https://pump.fun/coin/${KEPT_MINT}`,
+    pumpUrl: `https://pump.fun/coin/${PAYPIG_MINT}`,
   };
 }
 
@@ -269,10 +269,10 @@ const EXAMPLE_FLOW: FlowStep[] = [
   {
     id: "buyback",
     title: "Buyback",
-    detail: "The protocol share market-buys $KEPT via Jupiter, then burns it.",
-    amount: "0.250 SOL → $KEPT → burn",
+    detail: "The protocol share market-buys $PAYPIG via Jupiter, then burns it.",
+    amount: "0.250 SOL → $PAYPIG → burn",
     status: "confirmed",
-    link: { label: "$KEPT and the buyback", href: "/docs/kept-and-the-buyback" },
+    link: { label: "$PAYPIG and the buyback", href: "/docs/paypig-and-the-buyback" },
   },
 ];
 
@@ -321,8 +321,8 @@ export async function getFlow(): Promise<{
     {
       id: "buyback",
       title: "Buyback",
-      detail: "Protocol share market-buys $KEPT via Jupiter, then burns it.",
-      amount: `${(claim.protocolShareCents / 100 / 245).toFixed(3)} SOL → $KEPT → burn`,
+      detail: "Protocol share market-buys $PAYPIG via Jupiter, then burns it.",
+      amount: `${(claim.protocolShareCents / 100 / 245).toFixed(3)} SOL → $PAYPIG → burn`,
       status: "waiting",
     },
   ];

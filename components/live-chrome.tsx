@@ -13,7 +13,7 @@ import { useBurns, usePayments, useTokens, TokenRowData } from "@/lib/api";
 import { numCompact, relTime, usd, usdCompact, usdWhole } from "@/lib/format";
 import { SectionLabel, TokenGlyph } from "./ui";
 
-/* ── status chips (stonks-style trading-floor chips, kept palette) ──── */
+/* ── status chips (stonks-style trading-floor chips, paypig palette) ──── */
 export function TokenChip({ t }: { t: TokenRowData }) {
   const ageH = (Date.now() - +new Date(t.createdAt)) / 3.6e6;
   if (ageH < 48)
@@ -91,14 +91,14 @@ export function TickerTape() {
     for (const b of (burns?.items ?? []).slice(0, 6)) {
       out.push({
         key: `b${b.id}`,
-        href: "/kept",
+        href: "/paypig",
         node: (
           <>
             <Flame size={11} className="text-ink" aria-hidden />
             <span className="text-ink-2">
               burn{" "}
               <b className="tabular-nums font-semibold text-ink">
-                {numCompact(b.keptAmount)} $KEPT
+                {numCompact(b.paypigAmount)} $PAYPIG
               </b>
             </span>
           </>
@@ -119,7 +119,7 @@ export function TickerTape() {
           <span className="h-1.5 w-1.5 rounded-full bg-blue" aria-hidden />
           No launches yet — be the first.
           <span className="font-mono text-[11px] text-ink-3">
-            Fees to onlyfans.com/&lt;user&gt; via Kept
+            Fees to onlyfans.com/&lt;user&gt; via PayPig
           </span>
         </Link>
       </div>
@@ -186,9 +186,9 @@ export function HeroRail() {
           </p>
           <div className="mt-3 space-y-0">
             {[
-              ["kept_fan_01 subscribed", "$9.99", "2m"],
-              ["kept_fan_01 tipped", "$12.40", "1h"],
-              ["kept_fan_02 subscribed", "$9.99", "4h"],
+              ["paypig_fan_01 subscribed", "$9.99", "2m"],
+              ["paypig_fan_01 tipped", "$12.40", "1h"],
+              ["paypig_fan_02 subscribed", "$9.99", "4h"],
             ].map(([who, amt, when]) => (
               <div
                 key={who}
@@ -213,7 +213,7 @@ export function HeroRail() {
       {/* floating receipt */}
       <div className="card absolute -bottom-6 -right-4 z-10 w-[200px] !rounded-xl p-3.5">
         <div className="flex items-center justify-between">
-          <span className="sec-label">Kept receipt</span>
+          <span className="sec-label">PayPig receipt</span>
           <span className="rounded bg-green-soft px-1 text-[9px] font-bold uppercase text-green">
             sub
           </span>
@@ -231,7 +231,7 @@ export function HeroRail() {
   );
 }
 
-/* ── milestone playground (Hyped's ladder, rebuilt for Kept) ────────── */
+/* ── milestone playground (Hyped's ladder, rebuilt for PayPig) ────────── */
 const FEE_RATE = 0.003; // ~0.30% of trade volume accrues as creator fees
 const SUB_PRICE = 999;
 
@@ -276,7 +276,7 @@ export function MilestonePlayground() {
             value={volK}
             onChange={(e) => setVolK(Number(e.target.value))}
             aria-label="Monthly trade volume"
-            className="mt-3 w-full accent-[#1d4ed8]"
+            className="mt-3 w-full accent-[#00AFF0]"
           />
           <div className="mt-1 flex justify-between text-[10.5px] text-ink-3">
             <span>$5k</span>
@@ -310,7 +310,7 @@ export function MilestonePlayground() {
               </p>
             </div>
             <div className="rounded-xl border border-line bg-tint p-3">
-              <p className="sec-label">$KEPT burned</p>
+              <p className="sec-label">$PAYPIG burned</p>
               <p className="mt-0.5 text-[18px] font-semibold tabular-nums text-ink">
                 {usdWhole(burnCents)}
               </p>

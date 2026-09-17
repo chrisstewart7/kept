@@ -4,7 +4,7 @@ import { PaymentsView } from "./payments-view";
 export const metadata: Metadata = {
   title: "Payments",
   description:
-    "Every subscription purchase and donation Kept has made, with public receipts.",
+    "Every subscription purchase and donation PayPig has made, with public receipts.",
 };
 
 export default function PaymentsPage() {

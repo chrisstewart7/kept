@@ -118,8 +118,8 @@ export function CopyButton({
 }
 
 /* ── Avatar — initials on blue-soft, SFW (§12) ──────────────────────── */
-const TINTS = ["#eff4ff", "#e6efff", "#dbe6ff", "#e9f0ff", "#f0f5ff"];
-const INKS = ["#1d4ed8", "#2563eb", "#1e40af", "#3b82f6", "#1d4ed8"];
+const TINTS = ["#E6F7FE", "#DDF3FD", "#D3EFFB", "#E0F5FE", "#EDF9FE"];
+const INKS = ["#00AFF0", "#009EE0", "#0089C4", "#33C1F5", "#00AFF0"];
 
 export function Avatar({
   creator,
@@ -184,7 +184,7 @@ export function TokenGlyph({
         height: size,
         fontSize: Math.max(9, size * 0.28),
         background: h % 2 ? "var(--bg-tint)" : "var(--bg-tint-2)",
-        color: "#1d4ed8",
+        color: "#00AFF0",
         border: "1px solid var(--line)",
       }}
     >
@@ -208,7 +208,7 @@ export function SplitLegend() {
         </span>
         <span>
           <span className="mr-1.5 inline-block h-2 w-2 rounded-sm bg-ink" />
-          20% $KEPT burn
+          20% $PAYPIG burn
         </span>
       </div>
     </div>

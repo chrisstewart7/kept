@@ -1,6 +1,6 @@
-/* Kept monogram (§2): navy rectangle, white K, small blue bar on the left —
-   like a paid-tab indicator. */
-export function KeptMark({ size = 28 }: { size?: number }) {
+/* PayPig mark (§2): OnlyFans-style solid blue circle with a white rounded
+   pig snout — two blue nostrils, small white ears peeking above. */
+export function PigMark({ size = 28 }: { size?: number }) {
   return (
     <svg
       width={size}
@@ -9,12 +9,15 @@ export function KeptMark({ size = 28 }: { size?: number }) {
       aria-hidden="true"
       className="shrink-0"
     >
-      <rect width="32" height="32" rx="8" fill="#0b1220" />
-      <rect x="5" y="8" width="3" height="16" rx="1.5" fill="#3b82f6" />
-      <path
-        d="M13 8v16h3.4v-5.2l1.7-1.9 4.4 7.1H26l-6-9.4 5.6-6.6h-3.9l-5.3 6.5V8H13Z"
-        fill="#ffffff"
-      />
+      <circle cx="16" cy="16" r="16" fill="#00AFF0" />
+      {/* ears */}
+      <circle cx="10.5" cy="9.5" r="2.4" fill="#ffffff" />
+      <circle cx="21.5" cy="9.5" r="2.4" fill="#ffffff" />
+      {/* snout */}
+      <rect x="8" y="11" width="16" height="10" rx="5" fill="#ffffff" />
+      {/* nostrils */}
+      <circle cx="12.8" cy="16" r="1.6" fill="#00AFF0" />
+      <circle cx="19.2" cy="16" r="1.6" fill="#00AFF0" />
     </svg>
   );
 }
@@ -22,13 +25,14 @@ export function KeptMark({ size = 28 }: { size?: number }) {
 export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <KeptMark />
+      <PigMark />
       {!compact && (
         <span
-          className="font-serif text-[22px] leading-none tracking-tight text-ink"
+          className="font-sans text-[22px] font-bold leading-none tracking-tight"
           style={{ letterSpacing: "-0.02em" }}
         >
-          Kept
+          <span style={{ color: "var(--ink)" }}>Pay</span>
+          <span style={{ color: "#00AFF0" }}>Pig</span>
         </span>
       )}
     </span>

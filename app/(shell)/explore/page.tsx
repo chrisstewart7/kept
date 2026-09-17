@@ -5,7 +5,7 @@ import { ExploreView } from "./explore-view";
 export const metadata: Metadata = {
   title: "Explore",
   description:
-    "Every token routing fees through Kept, and every creator receiving them.",
+    "Every token routing fees through PayPig, and every creator receiving them.",
 };
 
 export default function ExplorePage() {

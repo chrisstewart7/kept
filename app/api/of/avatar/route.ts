@@ -14,8 +14,8 @@ export const dynamic = "force-dynamic";
 
 const DIR =
   process.env.VERCEL === "1"
-    ? "/tmp/kept-avatars"
-    : path.join(process.cwd(), ".kept-data", "avatars");
+    ? "/tmp/paypig-avatars"
+    : path.join(process.cwd(), ".paypig-data", "avatars");
 
 export async function GET(req: NextRequest) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "local";

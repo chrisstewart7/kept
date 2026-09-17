@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import { getBurns, getKeptInfo } from "@/lib/data";
+import { getBurns, getPayPigInfo } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   return NextResponse.json({
-    info: await getKeptInfo(),
+    info: await getPayPigInfo(),
     burns: await getBurns(20),
   });
 }

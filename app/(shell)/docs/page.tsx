@@ -4,7 +4,7 @@ import { DOCS } from "@/content/docs";
 
 export const metadata: Metadata = {
   title: "Docs",
-  description: "How Kept routes token fees into OnlyFans subscriptions and dollars.",
+  description: "How PayPig routes token fees into OnlyFans subscriptions and dollars.",
 };
 
 /* The full manual on one page — every section, anchored. Per-section pages

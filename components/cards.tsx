@@ -184,7 +184,7 @@ export function TokenCard({ t }: { t: TokenRowData }) {
   return (
     <Link
       href={`/token/${t.mint}`}
-      className="card block p-4 transition-shadow hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_32px_rgba(29,78,216,0.10)]"
+      className="card block p-4 transition-shadow hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_32px_rgba(0,175,240,0.12)]"
     >
       <div className="flex items-center gap-3">
         <TokenGlyph ticker={t.ticker} image={t.imageUrl} size={38} />
@@ -299,7 +299,7 @@ export function CreatorCard({ c }: { c: Creator }) {
   return (
     <Link
       href={`/creator/${c.ofUsername}`}
-      className="card block p-4 transition-shadow hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_32px_rgba(29,78,216,0.10)]"
+      className="card block p-4 transition-shadow hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_12px_32px_rgba(0,175,240,0.12)]"
     >
       <div className="flex items-center gap-3">
         <Avatar creator={c} size={38} />

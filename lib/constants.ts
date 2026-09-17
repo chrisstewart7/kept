@@ -1,41 +1,41 @@
 /* Placeholder on-chain values (§1). Swap via env before launch. */
 
-export const KEPT_MINT =
-  process.env.NEXT_PUBLIC_KEPT_MINT ??
-  "KEPTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxpump";
+export const PAYPIG_MINT =
+  process.env.NEXT_PUBLIC_PAYPIG_MINT ??
+  "PAYPIGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxpump";
 
 export const TREASURY =
   process.env.NEXT_PUBLIC_TREASURY ??
-  "KeptTreasury11111111111111111111111111111";
+  "PayPigTreasury11111111111111111111111111111";
 
 /** true only when a real base58 pubkey is set — placeholders don't count */
 export function treasuryConfigured(): boolean {
   return (
     !!process.env.NEXT_PUBLIC_TREASURY &&
-    !/^KeptTreasury1+$/.test(TREASURY) &&
+    !/^PayPigTreasury1+$/.test(TREASURY) &&
     /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(TREASURY)
   );
 }
 
-/** true only when $KEPT's real mint is set */
-export function keptMintConfigured(): boolean {
+/** true only when $PAYPIG's real mint is set */
+export function paypigMintConfigured(): boolean {
   return (
-    !!process.env.NEXT_PUBLIC_KEPT_MINT &&
-    !KEPT_MINT.startsWith("KEPTxxxx") &&
-    /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(KEPT_MINT)
+    !!process.env.NEXT_PUBLIC_PAYPIG_MINT &&
+    !PAYPIG_MINT.startsWith("PAYPIGxxxx") &&
+    /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(PAYPIG_MINT)
   );
 }
 
-export const X_HANDLE = process.env.NEXT_PUBLIC_X_HANDLE ?? "@UseKept";
+export const X_HANDLE = process.env.NEXT_PUBLIC_X_HANDLE ?? "@PayPigApp";
 
-export const SITE_URL = "https://usekept.app";
-export const SITE_NAME = "Kept";
-export const ADMIN_EMAIL = "admin@usekept.app";
+export const SITE_URL = "https://paypig.app";
+export const SITE_NAME = "PayPig";
+export const ADMIN_EMAIL = "admin@paypig.app";
 
 export const DEFAULT_SUB_PRICE_CENTS = 999;
 
 export const descriptionLine = (ofUsername: string) =>
-  `Fees to onlyfans.com/${ofUsername} via Kept`;
+  `Fees to onlyfans.com/${ofUsername} via PayPig`;
 
 export const OF_USERNAME_RE = /^[a-zA-Z0-9._-]+$/;
 
@@ -49,6 +49,6 @@ export const NAV = [
   { href: "/analytics", label: "Analytics" },
   { href: "/launch", label: "Launch" },
   { href: "/flow", label: "Capital Flow" },
-  { href: "/kept", label: "$KEPT" },
+  { href: "/paypig", label: "$PAYPIG" },
   { href: "/docs", label: "Docs" },
 ] as const;

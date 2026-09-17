@@ -1,11 +1,11 @@
 /**
  * On-chain verification — the gate to the Board.
  *
- * A mint is a Kept token only when ALL hold (§3):
+ * A mint is a PayPig token only when ALL hold (§3):
  *  1. it exists on pump.fun (bonding curve or PumpSwap)
  *  2. fee sharing routes 100% of shares to the treasury
  *  3. the sharing config is no longer editable
- *  4. the description carries "Fees to onlyfans.com/<user> via Kept"
+ *  4. the description carries "Fees to onlyfans.com/<user> via PayPig"
  *
  * Anything that cannot be verified is NOT listed. No simulation.
  */
@@ -54,7 +54,7 @@ const FAIL = {
 
 export function parseRecipient(description: string): string | null {
   const m = description?.match(
-    /Fees to onlyfans\.com\/([a-zA-Z0-9._-]{3,30}) via Kept/i,
+    /Fees to onlyfans\.com\/([a-zA-Z0-9._-]{3,30}) via PayPig/i,
   );
   if (!m) return null;
   return OF_USERNAME_RE.test(m[1]) ? m[1].toLowerCase() : null;
@@ -126,7 +126,7 @@ export async function verifyToken(mint: string): Promise<VerifyResult> {
         holders.length === 1 &&
         holders[0].address.toString() === cfg.treasury &&
         holders[0].shareBps === 10_000;
-      if (!feeShare100) shareReason = "Fee share is not 100% to the Kept treasury.";
+      if (!feeShare100) shareReason = "Fee share is not 100% to the PayPig treasury.";
       try {
         configLocked = !sdk.isSharingConfigEditable({
           sharingConfig: decoded,
@@ -153,7 +153,7 @@ export async function verifyToken(mint: string): Promise<VerifyResult> {
     reason: ok
       ? undefined
       : !ofUsername
-        ? 'Description is missing the exact line "Fees to onlyfans.com/<username> via Kept".'
+        ? 'Description is missing the exact line "Fees to onlyfans.com/<username> via PayPig".'
         : shareReason || "Verification failed.",
     checks,
     meta: {
